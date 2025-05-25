@@ -1,8 +1,9 @@
 ; This script requires Nircmd, which can be found easily online
-; Download and run nircmd as admin to install nircmd to windows dir (e.g., C:\Windows\nircmd.exe)
+; Download and run nircmd as admin to install nircmd to windows dir
 ; Be sure to set your devices correctly, you can rename them if you have conflicting names
 ; Default Hotkey is Alt+Ctrl+S
 ; No Pop-up is present on switching of audio
+; To have this run on startup, copy a shortcut to shell:startup
 #Persistent
 #SingleInstance force
 
@@ -15,7 +16,7 @@ global toggleState := false
 ; Check if nircmd.exe exists at the specified path
 If !FileExist(NirCmdFullPath)
 {
-    MsgBox, 48, Error, Nircmd.exe not found at %NirCmdFullPath%.`nPlease ensure it is installed there.`nScript will now exit.
+    MsgBox, 48, Config Issue,It appears we can't find nircmd executable.`nCheck config and try again exit.
     ExitApp
 }
 Return
@@ -25,7 +26,6 @@ Return
     toggleState := !toggleState
     targetDevice := toggleState ? Device2_Name : Device1_Name
 
-    ; Run nircmd using the full path, hiding the command window
     Run %NirCmdFullPath% setdefaultsounddevice "%targetDevice%" 1,, Hide
     Run %NirCmdFullPath% setdefaultsounddevice "%targetDevice%" 2,, Hide
 Return
