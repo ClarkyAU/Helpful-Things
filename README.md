@@ -7,7 +7,7 @@ I'll be adding new tools and updating their use cases periodically.
 **AutoHotKey**
   AutoHotKey (AHK) is a powerful, free, and open-source scripting language for Windows that allows you to automate almost anything. You can create scripts to perform complex tasks, remap keys, create custom shortcuts, and much more.
     
-  Audio_Switch_NirCMD.ahk
+ ** Audio_Switch_NirCMD.ahk**
     Switching audio output devices in Windows can sometimes be cumbersome, especially when in a full-screen application or dealing with frequently connected/disconnected USB audio devices. This script simplifies the process.
 
   Use Case:
